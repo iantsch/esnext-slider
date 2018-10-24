@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESnext Slider - Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="NOODP">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="mbt.wien">
+  <meta name="description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="keywords" content="Vanilla JS, ES6, ES7, ES8, ES9, ESnext, Slider, Swiper, Carousel, a11y, l10n, mbt.wien, iantsch, Christian Tschugg">
+  <meta name="author" content="Christian Tschugg">
+  <meta name="og:site_name" content="ESnext Slider">
+  <meta name="og:title" content="ESnext Slider">
+  <meta name="og:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="og:image" content="images/esnext-slider.share.jpg">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://iantsch.github.io/esnext-slider/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:img:src" content="images/esnext-slider.share.jpg">
+  <meta name="twitter:title" content="ESnext Slider">
+  <meta name="twitter:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="twitter:creator" content="@iantsch">
+  <meta name="twitter:site" content="@iantsch">
+  <link rel="cannonical" href="https://iantsch.github.io/esnext-slider/">
+  <link rel="shortlink" href="https://iantsch.github.io/esnext-slider/">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ffe400">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffe400">
+  <meta name="msapplication-TileImage" content="mstile-150x150.png">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffe400">
+  <script src="dist/main.js?v=0.0.1" defer></script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Carter+One|Fira+Mono|Fira+Sans+Condensed:300,500">
+  <link rel="preload" as="style" href="dist/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Carter+One|Fira+Mono|Fira+Sans+Condensed:300,500">
+  <link rel="stylesheet" id="stylesheet" href="dist/style.css">
+</head>
+<body>
+<div class="page">
+  <a href="#content" class="skip-to" title="Skip to content">Skip to content</a>
+  <a href="#menu" class="skip-to" title="Skip to menu">Skip to menu</a>
+  <header class="page__header" id="header">
+    <div class="page__wrapper">
+      <h1 class="page__title">ES<sup title="next">n</sup> Slider</h1>
+      <p class="page__claim">33<abbr title="kilobyte">KB</abbr> ~ 7.9<abbr title="kilobyte">KB</abbr> gzipped</p>
+    </div>
+  </header>
+  <nav class="page__nav menu" id="menu">
+    <div class="page__wrapper">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--logo">
+          <a href="#header" class="menu__link" title="Back to Header">ES<sup title="next">n</sup>&nbsp;Slider</a>
+        </li>
+        <li class="menu__item">
+          <a href="#tldr" class="menu__link" title="Display summary">TL;DR</a>
+        </li>
+        <li class="menu__item">
+          <a href="#examples" class="menu__link" title="Display examples">Examples</a>
+        </li>
+        <li class="menu__item">
+          <a href="#features" class="menu__link" title="Display features">Features</a>
+        </li>
+        <li class="menu__item">
+          <a href="#settings" class="menu__link" title="Display settings">Settings</a>
+        </li>
+        <li class="menu__item">
+          <a href="#api" class="menu__link" title="Display application interface">API</a>
+        </li>
+        <li class="menu__item">
+          <a href="#events" class="menu__link" title="Events">Events</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="page__main" id="content">
+    <section class="page__block block block--examples" id="tldr">
+      <div class="page__wrapper">
+        <h2 class="block__title"><abbr title="Too long; didn't read">TL;DR</abbr></h2>
+        <p>
+          Slim and modular <abbr title="ECMAScript 2018 (European Computer Manufacturers Association)">ES9</abbr>
+          javascript slider/carousel library ~ 7.9<abbr title="kilobyte">KB</abbr> gzipped.
+        </p>
+        <p class="group">
+          <a href="https://github.com/iantsch/esnext-slider/archive/master.zip" class="download" title="Download ZIP file">Download</a>
+          <a href="https://github.com/iantsch/esnext-slider" class="download" title="Visit repository on GitHub">GitHub</a>
+        </p>
+        <h3>Default usage</h3>
+        <p>Add the <abbr title="JavaScript">JS</abbr> and CSS to your markup.</p>
+        <pre><code><span style="color: rgb(232, 191, 106);">&lt;script </span><span style="color: rgb(186, 186, 186);">src=</span><span
+            style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.1/dist/esnext-slider.js" </span><span
+            style="color: rgb(186, 186, 186);">defer</span><span
+            style="color: rgb(232, 191, 106);">&gt;&lt;/script&gt;</span></code></pre>
+        <pre><code><span style="color: rgb(232, 191, 106);">&lt;link </span><span style="color: rgb(186, 186, 186);">rel=</span><span
+            style="color: rgb(165, 194, 97);">"stylesheet" </span><span
+            style="color: rgb(186, 186, 186);">src=</span><span style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.1/dist/css/esnext-slider.css"</span><span
+            style="color: rgb(232, 191, 106);">&gt;</span></code></pre>
+        <p>Add Slider Markup</p>
+        <pre><span style="color: rgb(232, 191, 106);">&lt;div </span><span
+            style="color: rgb(186, 186, 186);">class=</span><span style="color: rgb(165, 194, 97);">"slider"</span><span
+            style="color: rgb(232, 191, 106);">&gt;</span>
+  <span style="color: rgb(232, 191, 106);">  &lt;div </span><span style="color: rgb(186, 186, 186);">class=</span><span
+              style="color: rgb(165, 194, 97);">"slider__slide"</span><span
+              style="color: rgb(232, 191, 106);">&gt;</span>…<span
+              style="color: rgb(232, 191, 106);">&lt;/div&gt;</span>
+  <span style="color: rgb(232, 191, 106);">  &lt;div </span><span style="color: rgb(186, 186, 186);">class=</span><span
+              style="color: rgb(165, 194, 97);">"slider__slide"</span><span
+              style="color: rgb(232, 191, 106);">&gt;</span>…<span
+              style="color: rgb(232, 191, 106);">&lt;/div&gt;</span>
+  <span style="color: rgb(232, 191, 106);">  &lt;div </span><span style="color: rgb(186, 186, 186);">class=</span><span
+              style="color: rgb(165, 194, 97);">"slider__slide"</span><span
+              style="color: rgb(232, 191, 106);">&gt;</span>…<span
+              style="color: rgb(232, 191, 106);">&lt;/div&gt;</span>
+  <span style="color: rgb(232, 191, 106);">  &lt;div </span><span style="color: rgb(186, 186, 186);">class=</span><span
+              style="color: rgb(165, 194, 97);">"slider__slide"</span><span
+              style="color: rgb(232, 191, 106);">&gt;</span>…<span
+              style="color: rgb(232, 191, 106);">&lt;/div&gt;</span>
+<span style="color: rgb(232, 191, 106);">&lt;/div&gt;</span></pre>
+        <p>Instantiate Slider</p>
+        <pre><span style="color: rgb(232, 191, 106);">&lt;script&gt;</span>
+  <span style="color: rgb(204, 120, 50); font-weight: bold;">new</span> Slider;
+<span style="color: rgb(232, 191, 106);">&lt;/script&gt;</span></pre>
+        <h3>Use with bundler</h3>
+        <p>If you use a package manager install it via npm/yarn</p>
+        <pre class="bash bash--default">npm i esnext-slider --save</pre>
+        <p>Import l10n, plugins and slider and instantiate slider with custom settings</p>
+        <pre><span style="color: rgb(204, 120, 50); font-weight: bold;">import </span>de <span
+            style="color: rgb(204, 120, 50); font-weight: bold;">from </span><span style="color: rgb(106, 135, 89);">"esnext-slider/src/l10n/de"</span><span
+            style="color: rgb(204, 120, 50);">;</span>
+<span style="color: rgb(204, 120, 50); font-weight: bold;">import </span>History <span
+            style="color: rgb(204, 120, 50); font-weight: bold;">from </span><span style="color: rgb(106, 135, 89);">"esnext-slider/src/plugins/history"</span><span
+            style="color: rgb(204, 120, 50);">;</span>
+<span style="color: rgb(204, 120, 50); font-weight: bold;">import </span>Slider <span
+              style="color: rgb(204, 120, 50); font-weight: bold;">from </span><span style="color: rgb(106, 135, 89);">"esnext-slider"</span>
+
+<span style="color: rgb(152, 118, 170);">document</span>.<span
+              style="color: rgb(255, 198, 109);">addEventListener</span>(<span style="color: rgb(106, 135, 89);">'DOMContentLoaded'</span><span
+              style="color: rgb(204, 120, 50);">, </span>() =&gt; {
+  <span style="color: rgb(204, 120, 50); font-weight: bold;">new </span>Slider({
+    <span style="color: rgb(152, 118, 170);">l10n</span>: de,
+    <span style="color: rgb(152, 118, 170);">history</span>: {
+      <span style="color: rgb(152, 118, 170);">base</span>: <span style="color: rgb(106, 135, 89);">'slider'</span>,
+      <span style="color: rgb(152, 118, 170);">write</span>: <span style="color: rgb(204, 120, 50); font-weight: bold;">true</span>,
+      <span style="color: rgb(152, 118, 170);">read</span>: <span style="color: rgb(204, 120, 50); font-weight: bold;">true</span>,
+    }
+  })<span
+              style="color: rgb(204, 120, 50);">;</span>
+})<span style="color: rgb(204, 120, 50);">;</span></pre>
+      </div>
+    </section>
+    <section class="page__block block block--examples" id="examples">
+      <div class="page__wrapper">
+        <h2 class="block__title">Examples</h2>
+        <p>Showing is better than telling, therefor a little showcase</p>
+        <h3>Pagination</h3>
+        <div class="group">
+          <button class="pagination pagination--prev pagination--active" title="Toggle prev arrow">Prev</button>
+          <button class="pagination pagination--dots pagination--active" title="Toggle dots">Dots</button>
+          <button class="pagination pagination--next pagination--active" title="Toggle next arrow">Next</button>
+        </div>
+        <div class="slider slider--paginate">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+        <h3>Autoplay</h3>
+        <div class="group">
+          <button class="autoplay autoplay--rewind" title="Rewind slides while autoplay">Rewind</button>
+          <button class="autoplay autoplay--bounce autoplay--active" title="Bounce slides while autoplay">Bounce
+          </button>
+          <button class="autoplay autoplay--loop" title="Loop slides while autoplay">Loop</button>
+        </div>
+        <div class="slider slider--autoplay">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+        <h3>Align</h3>
+        <div class="group">
+          <button class="align align--left align--active" title="Align Slides left">Left</button>
+          <button class="align align--center" title="Align Slides center">Center</button>
+          <button class="align align--right" title="Align Slides right">Right</button>
+        </div>
+        <div class="slider slider--align">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+        <h3>Synchronize Sliders <span>- extended via plugin</span></h3>
+        <div class="slider slider--synced slider--big">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+        <div class="slider slider--synced slider--small">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+        <h3>History <abbr title="Application Programming Interface">API</abbr> <span>- extended via plugin</span></h3>
+        <div class="slider slider--history">
+          <div class="slider__slide">1</div>
+          <div class="slider__slide">2</div>
+          <div class="slider__slide">3</div>
+          <div class="slider__slide">4</div>
+          <div class="slider__slide">5</div>
+          <div class="slider__slide">6</div>
+        </div>
+      </div>
+    </section>
+    <section class="page__block block block--features" id="features">
+      <div class="page__wrapper">
+        <h2 class="block__title">Features</h2>
+        <ul>
+          <li><abbr title="Block Element Modifier">BEM</abbr> class names (configurable)</li>
+          <li>full <abbr title="Application Programming Interface">API</abbr> access on slider <code>HTMLElement</code></li>
+          <li>horizontal/vertical mode (Fade mode planned)</li>
+          <li>carousel (Loop) / slider ((not) rewind)</li>
+          <li>pagination (dots, prev, next)</li>
+          <li>align active slide (left, center, right)</li>
+          <li>swipe (touch) and/or drag (mouse) support</li>
+          <li><code>IntersectionObserver</code> (or polyfill) to change slide visibility (configurable)</li>
+          <li><abbr title="frames per second">FPS</abbr> throttle for slide/resize calculations (24<abbr title="frames per second">fps</abbr>)</li>
+          <li>custom events on <code>init</code>, <code>beforeslide</code>, <code>afterslide</code>, <code>edgejump</code> and <code>destroy</code></li>
+          <li>passive events, if supported an applicable</li>
+          <li>stop autoplay on hidden, if supported by browser.</li>
+          <li><abbr title="localization">l10n</abbr> of strings, default: <code>en</code>; available: <code>de</code></li>
+          <li><small>plugin:</small> <strong>history.js</strong>: implements <code>HistoryAPI</code> on slider</li>
+          <li><small>plugin:</small> <strong>sync.js</strong>: allows syncing of n sliders, e.g. A => B, A <=> B or A <= B</li>
+        </ul>
+      </div>
+    </section>
+    <section class="page__block block block--settings" id="settings">
+      <div class="page__wrapper">
+        <h2 class="block__title">Settings</h2>
+        <div class="setting">
+          <h3>node</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>void</code>/<code>string</code>/<code>HTMLElement</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>void</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Either <code>HTMLElement</code> of Slider or selector of slider(s)
+          </p>
+        </div>
+        <div class="setting">
+          <h3>block</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>string</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>'slider'</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Block class name
+          </p>
+        </div>
+        <div class="setting">
+          <h3>element</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Default values</strong>:<br>
+            <code>element.<strong>track</strong></code>: <code>'track'</code><br>
+            <code>element.<strong>slide</strong></code>: <code>'slide'</code><br>
+            <code>element.<strong>pagination</strong></code>: <code>'pagination'</code><br>
+            <code>element.<strong>dots</strong></code>: <code>'dots'</code><br>
+            <code>element.<strong>dot</strong></code>: <code>'dot'</code><br>
+            <code>element.<strong>button</strong></code>: <code>'button'</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Element class names
+          </p>
+        </div>
+        <div class="setting">
+          <h3>modifier</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Default values</strong>:<br>
+            <code>modifier.<strong>active</strong></code>: <code>'active'</code><br>
+            <code>modifier.<strong>visible</strong></code>: <code>'visible'</code><br>
+            <code>modifier.<strong>next</strong></code>: <code>'next'</code><br>
+            <code>modifier.<strong>prev</strong></code>: <code>'prev'</code><br>
+            <code>modifier.<strong>dot</strong></code>: <code>'dot'</code><br>
+            <code>modifier.<strong>edge</strong></code>: <code>'edge'</code><br>
+            <code>modifier.<strong>horizontal</strong></code>: <code>'horizontal'</code><br>
+            <code>modifier.<strong>vertical</strong></code>: <code>'vertical'</code><br>
+            <code>modifier.<strong>play</strong></code>: <code>'play'</code><br>
+            <code>modifier.<strong>pause</strong></code>: <code>'pause'</code><br>
+            <code>modifier.<strong>disabled</strong></code>: <code>'disabled'</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Modifier class names for states/description of elements
+          </p>
+        </div>
+        <div class="setting">
+          <h3>clones</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>integer</code></em></p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>3</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Number of generated clones per edge, if <code>loop</code> is enabled.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>transition</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>integer</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>250</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Transition time per slide.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>ease</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>function</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>easeInOutQuart</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Transition easing function with <code>time</code>, <code>start</code>, <code>value</code>,
+            <code>duration</code> as arguments.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>align</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>enum</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>'left'</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Alignment of slides. Allowed values: <code>left</code>, <code>center</code> or <code>right</code>.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>mode</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>enum</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>'horizontal'</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Slider mode. Allowed values: <code>horizontal</code> or <code>vertical</code>.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>initialSlide</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>integer</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>0</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Initial slide on a zero-based index.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>slidesToSlide</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>integer</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>1</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Number of slides to slide on <code>play</code>, <code>prev</code> or <code>next</code>.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>play</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>bool</code>/<code>HTMLElement</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>true</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Flag to enable autoplay. If it is a <code>HTMLElement</code>, it will replace the autoplay toggle button.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>autoplay</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Default values</strong>:<br>
+            <code>autoplay.<strong>direction</strong></code>: <em><code>enum</code></em> <code>'>'</code><br>
+            <code>autoplay.<strong>mode</strong></code>: <em><code>enum</code></em> <code>'bounce'</code><br>
+            <code>autoplay.<strong>duration</strong></code>: <em><code>integer</code></em> <code>3800</code><br>
+            <code>autoplay.<strong>pauseOnInteraction</strong></code>: <em><code>bool</code></em> <code>true</code><br>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            <code>autoplay.<strong>direction</strong></code>:
+            Allowed values: <code>'&lt;'</code> or <code>'&gt;'</code><br>
+            <code>autoplay.<strong>mode</strong></code>:
+            Allowed values: <code>'bounce'</code>, <code>'rewind'</code> or <code>'loop'</code>
+            (needs <code>loop</code> enabled)<br>
+            <code>autoplay.<strong>duration</strong></code>: Duration for autoplay timeout in
+            <abbr title="milliseconds">ms</abbr><br>
+            <code>autoplay.<strong>pauseOnInteraction</strong></code>: Flag to toggle autoplay on interaction.<br>
+          </p>
+        </div>
+        <div class="setting">
+          <h3>intersection</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Default values</strong>:<br>
+            <code>intersection.<strong>root</strong></code>: <em><code>HTMLElement</code></em> <code>'this.$slider'</code><br>
+            <code>intersection.<strong>rootMargin</strong></code>: <em><code>string</code></em> <code>'-20px'</code><br>
+            <code>intersection.<strong>threshold</strong></code>: <em><code>float</code></em> <code>0</code><br>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            <code>intersection.<strong>root</strong></code>:<br>
+            Element to calculate the intersection against.<br><br>
+            <code>intersection.<strong>rootMargin</strong></code>:<br>
+            Adaptions to bounding box of root element.<br><br>
+            <code>intersection.<strong>threshold</strong></code>:<br>
+            Value between <code>0</code> and <code>1</code> that will define the percentage of intersection needed
+            to display/hide slide. <code>0</code> is at least <code>1<abbr title="pixel">px</abbr></code>
+          </p>
+        </div>
+        <h2 class="block__title">Settings <span>for: <strong>sync.js</strong></span></h2>
+        <div class="setting">
+          <h3>syncedSliders</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>NodeList</code>/<code>Array of HTMLElements</code></em></p>
+          <p>
+            <strong>Description</strong>:<br>
+            If the provided elements have a <code>slider</code> attribute (are instantiated), the current slider will
+            sync its movements with them.
+          </p>
+        </div>
+        <h2 class="block__title">Settings <span>for: <strong>history.js</strong></span></h2>
+        <p>You must add all settings if you want to use the <code>history.js</code> plugin.</p>
+        <div class="setting">
+          <h3>history</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Needed keys</strong>:<br>
+            <code>history.<strong>base</strong></code>: <em><code>string</code></em><br>
+            <code>history.<strong>write</strong></code>: <em><code>bool</code></em><br>
+            <code>history.<strong>read</strong></code>: <em><code>bool</code></em>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            <code>history.<strong>base</strong></code>: <br>
+            Will be the unique identifier within your <code>location.hash</code>.
+            The base is needed for <code>history.read</code> and/or <code>history.write</code>.<br><br>
+            <code>history.<strong>write</strong></code>: <br>
+            If enabled, each slide change will push in your browsers history. On <code>popstate</code>
+            slider will slide to those pushes.<br><br>
+            <code>history.<strong>read</strong></code>: <br>
+            If enabled, the event <code>popstate</code> will check for the presence of
+            <code>history.base</code> and the slide id <code>index + 1)</code>.
+            The slider will slide to the given slide if possible.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="page__block block block--api" id="api">
+      <div class="page__wrapper">
+        <h2 class="block__title"><abbr title="Application Programming Interface">API</abbr></h2>
+        <p>Available methods & settings. The API is also exposed in the <code>HTMLElement</code> as attribute <code>slider.slider</code>
+          and can be extended by plugins.</p>
+        <h3>slider.$$slides</h3>
+        <p>An array of all your slides (without clones).</p>
+        <h3>slider.settings</h3>
+        <p>If you want to mutate the slider instance.</p>
+        <h3>slider.prev()</h3>
+        <p>Slides to prev slide. It will slide <code>slidesToSlide</code> in length, if possible.</p>
+        <h3>slider.to( <code>slide</code> )</h3>
+        <p>Slides to slide with index <code>slide</code>. The slide index is zero based.</p>
+        <h3>slider.next()</h3>
+        <p>Slides to next slide. It will slide <code>slidesToSlide</code> in length, if possible.</p>
+        <h3>slider.destroy()</h3>
+        <p>Destroy slider and remove all event listeners.</p>
+        <h3>slider.reInit()</h3>
+        <p>To re-initialize a destroyed slider.</p>
+        <h3>slider.synced <span>- extended via <strong>sync.js</strong></span></h3>
+        <p>Boolean to prevent endless loops while syncing (if sliders sync each other)</p>
+      </div>
+    </section>
+    <section class="page__block block block--events" id="events">
+      <div class="page__wrapper">
+        <h2 class="block__title">Events</h2>
+        <p>Custom events you can hook into to enhance/extend your slider. Both shipped plugins (<code>history.js</code>
+          & <code>sync.js</code>) use those Events.</p>
+        <div class="event">
+          <h3>init</h3>
+          <p><strong>Arguments</strong>: <br>
+            <code>slider</code> - <br>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired just before slider initialization.
+          </p>
+        </div>
+        <div class="event">
+          <h3>beforeslide</h3>
+          <p><strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>current</code> - Zero-based slide index of current slide<br>
+            <code>next</code> - Zero-based slide index of target slide<br>
+            <code>isEdgeSlide</code> - <code>true</code> or <code>false</code> indicates that an edge will be jumped
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired before sliding to the next slide. If <code>dragToSlide</code>/<code>swipeToSlide</code> is
+            enabled, this event will be fired on drag/swipe start, without <code>next</code> or <code>isEdgeSlide</code>
+            If <code>loop</code> is enabled <code>isEdgeSlide</code> indicates an edge jump.
+          </p>
+        </div>
+        <div class="event">
+          <h3>afterslide</h3>
+          <p>
+            <strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>current</code> - Zero-based slide index of current slide<br>
+            <code>isEdgeSlide</code> - <code>true</code> or <code>false</code> indicates that an edge will be jumped
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired after sliding to the current slide. If <code>loop</code> is enabled <code>isEdgeSlide</code>
+            indicates an edge jump.
+          </p>
+        </div>
+        <div class="event">
+          <h3>edgejump</h3>
+          <p>
+            <strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>direction</code> - <code>&lt;</code> or <code>&gt;</code> indicate jump direction.
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Event is fired after an edge jump. The edge does only exist if <code>loop</code> is enabled and a clone is
+            the next slide.
+          </p>
+        </div>
+        <div class="event">
+          <h3>destroy</h3>
+          <p><strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>$slider</code> - $slider <code>HTMLElement</code> to bind event listeners to.<br>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired after slider destruction.
+          </p>
+        </div>
+        <div class="event event--internal">
+          <h3>slideend <span>- internal</span></h3>
+          <p>
+            <strong>Description</strong>:<br>
+            Event is immediately fired after transition is ended but before magic is happening. This Event is triggered
+            on the track and not the slider itsself.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="page__footer">
+    <div class="page__wrapper">
+      <p>&copy; 2018-today <a href="//mbt.wien" title="Visit mbt.wien">Christian Tschugg</a></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
