@@ -1,0 +1,49 @@
+{
+  "name": "esnext-slider",
+  "version": "0.0.1",
+  "description": "Slim modular ESnext carousel/slider library",
+  "main": "src/esnext-slider.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.11",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.6.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.1.1",
+    "postcss-scss": "^1.0.4",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.19.0",
+    "webpack": "^4.22",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.5.0"
+  },
+  "scripts": {
+    "dev": "webpack --watch --mode=development",
+    "live": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iantsch/esnext-slider.git"
+  },
+  "keywords": [
+    "es6",
+    "esnext",
+    "modular",
+    "slider",
+    "carousel"
+  ],
+  "author": "Christian Tschugg",
+  "bugs": {
+    "url": "https://github.com/iantsch/esnext-slider/issues"
+  },
+  "homepage": "https://iantsch.github.io/esnext-slider/"
+}
