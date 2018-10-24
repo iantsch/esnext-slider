@@ -70,9 +70,9 @@ class ExposeSlider {
 
 document.addEventListener('DOMContentLoaded', () => {
   let body = document.body,
-    isStyleLoaded = document.createElement('img');
+    isStyleLoaded = document.createElement('style');
   body.appendChild(isStyleLoaded);
-  isStyleLoaded.src = document.querySelector('#stylesheet').getAttribute('href');
+  isStyleLoaded.textContent = '@import "' + document.querySelector('#stylesheet').getAttribute('href') + '"';
 
   const MENU_OFFSET = 45;
   const SLIDERS = {};
@@ -142,7 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  isStyleLoaded.onerror = onCssLoaded;
+  let checkIfStylesAreLoaded = setInterval(() => {
+    try {
+      isStyleLoaded.sheet.cssRules;
+      onCssLoaded();
+      clearInterval(checkIfStylesAreLoaded);
+    } catch (e){}
+  }, 10);
 
   let eventClassName = 'event--internal';
   [...document.querySelectorAll(`.${eventClassName}`)].forEach($event => {
@@ -247,9 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         slider.destroy();
         setTimeout(() => {
-          slider.reInit();
+          slider.init();
+          slider.autoplay.stop = false;
+          slider.__resetAutoplay();
         },0);
-      },0);
+      },0);/**/
     });
   })
 });

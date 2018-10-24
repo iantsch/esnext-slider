@@ -36,7 +36,6 @@ export default class {
     if (slider.synced) {
       return;
     }
-    console.log(slider.synced, e.detail.slider.$slider.classList.contains('slider--big') ? 'big' : 'small');
     slider.synced = e.detail.next !== null;
     [...slider.settings.syncedSliders].forEach($foreignSlider => {
       $foreignSlider.slider.synced = e.detail.next !== null;

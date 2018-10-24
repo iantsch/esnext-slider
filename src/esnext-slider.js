@@ -405,7 +405,6 @@ export default class Slider {
       this.$next.addEventListener('click', this.next);
       this.$slider.addEventListener('afterslide', (e) => {
         if (!this.settings.rewind && !this.settings.loop && e.detail.current === this.$$slides.length - 1) {
-          console.log(this.settings.rewind);
           this.$next.classList.add(disabledButtonClass);
         } else {
           this.$next.classList.remove(disabledButtonClass);
@@ -855,23 +854,25 @@ export default class Slider {
       clearTimeout(this.autoplay.timeout);
       this.$play.parentNode.removeChild(this.$play);
     }
-    this.$track.style.transform = 'translate(0,0)';
-    this.$track.style[this.__size()] = null;
+    window.removeEventListener('resize', this.onResize);
     this.$$slides.forEach($slide => {
       $slide.classList.remove(`${this.__element('slide')}--${this.settings.modifier.active}`);
       $slide.removeAttribute('style');
       $slide.removeAttribute('tabindex');
       $slide.removeAttribute('aria-hidden');
       $slide.removeAttribute('data-slide');
+      this.$slider.appendChild($slide);
     });
     this.$$clones.forEach($clone => $clone.remove());
-    this.$pagination.parentNode.removeChild(this.$pagination);
-    window.removeEventListener('resize', this.onResize);
+    this.__resetElement(this.$pagination);
+    this.__resetElement(this.$prev);
+    this.__resetElement(this.$next);
+    this.__resetElement(this.$track);
+    this.__resetElement(this.$dots);
     if (supportsHidden) {
       document.removeEventListener(supportsHidden.event, this.onVisibilityChange, false);
     }
     this.$slider.classList.add(`${this.settings.block}--${this.settings.modifier.disabled}`);
-    this.$prev = this.$next = this.$dots = this.$track = this.$pagination = false;
     this.$$slidesAndClones = [];
     this.$$slides = [];
     this.$$clones = [];
@@ -889,5 +890,13 @@ export default class Slider {
     }
     this.settings.node = this.$slider = $sliderClone;
     return this.public;
+  }
+
+  __resetElement(attribute) {
+    let $el = this[attribute];
+    if (typeof $el === 'HTMLElement' && $el.hasOwnProperty('parentNode')) {
+      $el.parentNode.removeChild($el);
+      $el = false;
+    }
   }
 }
