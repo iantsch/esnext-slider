@@ -47,6 +47,7 @@ export default class Slider {
       },
       clones: 3,
       transition: 250,
+      multiplyTransition: true,
       ease: easeInOutQuart,
       align: 'left',
       mode: 'horizontal',
@@ -396,7 +397,7 @@ export default class Slider {
         this.__setActiveDot([...this.$dots.children][e.detail.current]);
       });
       this.$slider.addEventListener('beforeslide', (e) => {
-        this.__setActiveDot(e.detail.next ? [...this.$dots.children][e.detail.next] : null);
+        this.__setActiveDot(e.detail.next !== null ? [...this.$dots.children][e.detail.next] : null);
       });
     }
     if (this.settings.next) {
@@ -465,7 +466,7 @@ export default class Slider {
   }
 
   __slide(direction = null, transition = true) {
-    if (direction === null) {
+    if (direction === null || !this.$track) {
       return;
     }
     let slide = this.currentSlide + direction;
@@ -489,7 +490,7 @@ export default class Slider {
         this.$track.addEventListener('slideend', this.onEdgeJump);
       }
       let next = this.__relativeSlide(slide);
-      this.slideAnimation.transition = this.settings.transition * Math.abs(direction);
+      this.slideAnimation.transition = this.settings.multiplyTransition ? this.settings.transition * Math.abs(direction) : this.settings.transition;
       this.$slider.dispatchEvent(new CustomEvent('beforeslide', {
         detail: {
           slider: this,
@@ -519,6 +520,7 @@ export default class Slider {
 
   __slideEnd() {
     this.slideAnimation.start = parseInt(this.slideAnimation.start + this.slideAnimation.distance, 10);
+    this.slideAnimation.distance = 0;
     this.$track.style.transform = `translate${this.__axis()}(${this.slideAnimation.start}px)`;
     this.__resetAutoplay();
     if (this.slideAnimation.transition > 0) {
@@ -528,6 +530,17 @@ export default class Slider {
   }
 
   __slideDistance(distance, transition) {
+    if (this.slideAnimation.start !== parseInt(this.slideAnimation.start + this.slideAnimation.distance, 10)) {
+      cancelAnimationFrame(this.slideAnimation.rafId);
+      let isEdgeSlide = this.currentSlide < 0 || this.currentSlide > (this.$$slides.length - 1);
+      if (isEdgeSlide) {
+        this.onEdgeJump();
+        return;
+      } else {
+        this.slideAnimation.start = parseInt(this.$track.style.transform.replace(/[^-\d.]/g, ''), 10);
+        this.$track.style.transform = `translate${this.__axis()}(${this.slideAnimation.start}px)`;
+      }
+    }
     distance = this.__applyMinMaxDistance(distance);
     this.slideAnimation.then = this.slideAnimation.time = performance.now();
     this.slideAnimation.distance = distance - this.slideAnimation.start;
@@ -562,7 +575,16 @@ export default class Slider {
         return this.__slideEnd();
       }
       this.$track.style.transform = `translate${this.__axis()}(${parseInt(this.slideAnimation.calculated, 10)}px)`;
-      //window.dispatchEvent(new Event('scroll'));
+      this.$slider.dispatchEvent(new CustomEvent('whileslide', {
+        detail: {
+          slider: this,
+          direction: this.slideAnimation.calculated > this.slideAnimation.start ? '<' : '>',
+          distance: this.slideAnimation.distance,
+          distancePassed: Math.abs(parseInt(this.slideAnimation.start - this.slideAnimation.calculated,10)),
+          transition: this.slideAnimation.transition,
+          transitionPassed: parseInt(now - this.slideAnimation.time,10)
+        }
+      }));
     }
     this.slideAnimation.rafId = requestAnimationFrame(this.onSlide);
   }
@@ -662,6 +684,7 @@ export default class Slider {
     let visibleSlides = this.$$slidesAndClones.reduce((accumulator, $slide) => {
       if ($slide.classList.contains(visibleClass)) {
         accumulator.push($slide);
+        $slide.classList.remove(visibleClass)
       }
       return accumulator;
     }, []);
@@ -721,6 +744,14 @@ export default class Slider {
       this.$track.style.transform = `translate${this.__axis()}(${this.drag.track - this.drag.distance}px)`;
       this.drag.dragging = true;
       this.drag.disableFocusOnClick = true;
+      this.$slider.dispatchEvent(new CustomEvent('whiledrag', {
+        detail: {
+          slider: this,
+          direction: this.drag.distance < 0 ? '<' : '>',
+          distance: Math.abs(this.drag.distance),
+          origin: this.drag.track
+        }
+      }));
     }
   }
 

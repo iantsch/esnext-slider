@@ -20,7 +20,7 @@ export default class {
     if (this.slider.settings.syncedSliders.length === 0) {
       return;
     }
-    this.slider.public.synced = this.slider.synced = false;
+    this.slider.public.synced = false;
     this.slider.$slider.addEventListener('beforeslide', this.onBeforeSlide);
     this.slider.$slider.addEventListener('afterslide', this.onAfterSlide);
     [...this.slider.settings.syncedSliders].forEach($foreignSlider => {
@@ -33,13 +33,13 @@ export default class {
 
   onBeforeSlide(e) {
     let slider = e.detail.slider;
-    if (slider.synced) {
+    if (slider.public.synced) {
       return;
     }
-    slider.synced = e.detail.next !== null;
+    slider.public.synced = e.detail.next !== null;
     [...slider.settings.syncedSliders].forEach($foreignSlider => {
-      $foreignSlider.slider.synced = e.detail.next !== null;
       if (e.detail.next !== null) {
+        $foreignSlider.slider.synced = e.detail.next !== null;
         $foreignSlider.slider.to(e.detail.next);
       }
     });
@@ -47,21 +47,23 @@ export default class {
 
   onAfterSlide(e) {
     let slider = e.detail.slider;
-    if (slider.synced) {
-      slider.synced = false;
+    if (slider.public.synced) {
+      slider.public.synced = false;
       return;
     }
     [...slider.settings.syncedSliders].forEach($foreignSlider => {
-      $foreignSlider.slider.synced = slider.synced = true;
-      $foreignSlider.slider.to(e.detail.current);
+      if (!$foreignSlider.slider.synced) {
+        slider.public.synced = true;
+        $foreignSlider.slider.synced = true;
+        $foreignSlider.slider.to(e.detail.current);
+      }
     });
   }
 
   onForeignAfterSlide(e) {
     let slider = e.detail.slider;
-    if (!slider.synced) {
-      return;
-    }
-    slider.synced = false;
+    setTimeout(() => {
+      slider.public.synced = false;
+    }, 0);
   }
 }

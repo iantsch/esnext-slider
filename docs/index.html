@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ESnext Slider - Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped</title>
+  <title>ESnext Slider - Slim javascript slider/carousel library - Swipe/Drag support - ~ 8.0KB gzipped</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="NOODP">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="mbt.wien">
-  <meta name="description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 8.0KB gzipped">
   <meta name="keywords" content="Vanilla JS, ES6, ES7, ES8, ES9, ESnext, Slider, Swiper, Carousel, a11y, l10n, mbt.wien, iantsch, Christian Tschugg">
   <meta name="author" content="Christian Tschugg">
   <meta name="og:site_name" content="ESnext Slider">
   <meta name="og:title" content="ESnext Slider">
-  <meta name="og:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="og:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 8.0KB gzipped">
   <meta name="og:image" content="images/esnext.svg">
   <meta name="og:type" content="website">
   <meta name="og:url" content="https://iantsch.github.io/esnext-slider/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:img:src" content="images/esnext.svg">
   <meta name="twitter:title" content="ESnext Slider">
-  <meta name="twitter:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 7.9KB gzipped">
+  <meta name="twitter:description" content="Slim javascript slider/carousel library - Swipe/Drag support - ~ 8.0KB gzipped">
   <meta name="twitter:creator" content="@iantsch">
   <meta name="twitter:site" content="@iantsch">
   <link rel="cannonical" href="https://iantsch.github.io/esnext-slider/">
@@ -49,7 +49,7 @@
   <header class="page__header" id="header">
     <div class="page__wrapper">
       <h1 class="page__title">ES<sup title="next">n</sup> Slider</h1>
-      <p class="page__claim">33<abbr title="kilobyte">KB</abbr> ~ 7.9<abbr title="kilobyte">KB</abbr> gzipped</p>
+      <p class="page__claim">33<abbr title="kilobyte">KB</abbr> ~ 8.0<abbr title="kilobyte">KB</abbr> gzipped</p>
     </div>
   </header>
   <nav class="page__nav menu" id="menu">
@@ -85,7 +85,7 @@
         <h2 class="block__title"><abbr title="Too long; didn't read">TL;DR</abbr></h2>
         <p>
           Slim and modular <abbr title="ECMAScript 2018 (European Computer Manufacturers Association)">ES9</abbr>
-          javascript slider/carousel library ~ 7.9<abbr title="kilobyte">KB</abbr> gzipped.
+          javascript slider/carousel library ~ 8.0<abbr title="kilobyte">KB</abbr> gzipped.
         </p>
         <p class="group">
           <a href="https://github.com/iantsch/esnext-slider/archive/master.zip" class="download" title="Download ZIP file">Download</a>
@@ -94,12 +94,12 @@
         <h3>Default usage</h3>
         <p>Add the <abbr title="JavaScript">JS</abbr> and CSS to your markup.</p>
         <pre><code><span style="color: rgb(232, 191, 106);">&lt;script </span><span style="color: rgb(186, 186, 186);">src=</span><span
-            style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.4/dist/esnext-slider.js" </span><span
+            style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.5/dist/esnext-slider.js" </span><span
             style="color: rgb(186, 186, 186);">defer</span><span
             style="color: rgb(232, 191, 106);">&gt;&lt;/script&gt;</span></code></pre>
         <pre><code><span style="color: rgb(232, 191, 106);">&lt;link </span><span style="color: rgb(186, 186, 186);">rel=</span><span
             style="color: rgb(165, 194, 97);">"stylesheet" </span><span
-            style="color: rgb(186, 186, 186);">src=</span><span style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.4/dist/css/esnext-slider.css"</span><span
+            style="color: rgb(186, 186, 186);">src=</span><span style="color: rgb(165, 194, 97);">"//cdn.jsdelivr.net/npm/esnext-slider@0.0.5/dist/css/esnext-slider.css"</span><span
             style="color: rgb(232, 191, 106);">&gt;</span></code></pre>
         <p>Add Slider Markup</p>
         <pre><span style="color: rgb(232, 191, 106);">&lt;div </span><span
@@ -242,7 +242,10 @@
           <li>swipe (touch) and/or drag (mouse) support</li>
           <li><code>IntersectionObserver</code> (or polyfill) to change slide visibility (configurable)</li>
           <li><abbr title="frames per second">FPS</abbr> throttle for slide/resize calculations (24<abbr title="frames per second">fps</abbr>)</li>
-          <li>custom events on <code>init</code>, <code>beforeslide</code>, <code>afterslide</code>, <code>edgejump</code> and <code>destroy</code></li>
+          <li>
+            custom events on <code>init</code>, <code>beforeslide</code>, <code>whileslide</code>,
+            <code>whiledrag</code>, <code>afterslide</code>, <code>edgejump</code> and <code>destroy</code>
+          </li>
           <li>passive events, if supported an applicable</li>
           <li>stop autoplay on hidden, if supported by browser.</li>
           <li><abbr title="localization">l10n</abbr> of strings, default: <code>en</code>; available: <code>de</code></li>
@@ -356,6 +359,21 @@
           <p>
             <strong>Description</strong>:<br>
             Transition time per slide.
+          </p>
+        </div>
+        <div class="setting">
+          <h3>multiplyTransition</h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>bool</code></em>
+          </p>
+          <p>
+            <strong>Default value</strong>:<br>
+            <code>true</code>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Multiply transition time if distance is greater than one slider.
           </p>
         </div>
         <div class="setting">
@@ -498,45 +516,6 @@
           </p>
         </div>
         <!--
-
-## Settings
-
-| Setting | Type | Default Value | Description |
-|---|---|---|---|
-| **node** | `void`/`string`/`HTMLElement` | void | Either HTMLElement of Slider or selector of slider(s) |
-| **block** | `string` | 'slider' | **B**EM bock class name |
-| **element** | `object` | - | B**E**M elements |
-| element.**track** | `string` | 'track' | B**E**M track class name part |
-| element.**slide** | `string` | 'slide' | B**E**M slide class name part |
-| element.**pagination** | `string` | 'pagination' | B**E**M pagination class name part |
-| element.**dots** | `string` | 'dots' | B**E**M dots class name part |
-| element.**dot** | `string` | 'dot' | B**E**M dot class name part |
-| element.**button** | `string` | 'button' | B**E**M button class name part|
-| **modifier** | `object` | - | BE**M** modifiers |
-| modifier.**active** | `string` | 'active' | BE**M** active class name part |
-| modifier.**visible** | `string` | 'visible' | BE**M** visible class name part |
-| modifier.**next** | `string` | 'next' | BE**M** next class name part |
-| modifier.**prev** | `string` | 'prev' | BE**M** prev class name part |
-| modifier.**dot** | `string` | 'dot' | BE**M** dot class name part |
-| modifier.**edge** | `string` | 'edge' | BE**M** edge class name part |
-| modifier.**horizontal** | `string` | 'horizontal' | BE**M** horizontal class name part |
-| modifier.**vertical** | `string` | 'vertical' | BE**M** vertical class name part |
-| modifier.**play** | `string` | 'play' | BE**M** play class name part |
-| modifier.**pause** | `string` | 'pause' | BE**M** pause class name part |
-| modifier.**disabled** | `string` | 'disabled' | BE**M** disabled class name part |
-| **clones** | `integer` | 3 | Number of generated clones per edge, if `loop` is enabled |
-| **transition** | `integer` | 250 | Transition time |
-| **ease** | `function` | `easeInOutQuart` | Transition easing |
-| **align** | `enum` | `left` | Alignment of slides. Allowed values: `left`,`center`,`right` |
-| **mode** | `enum` | `horizontal` | Slider mode. Allowed values: `horizontal`,`vertical`, ~~`fade`~~ |
-| **initialSlide** | `integer` | 0 | Initial slide (Zero based index) |
-| **slidesToSlide** | `integer` | 1 | Number of slides to slide (for `play` or `prev`/`next`) |
-| **play** | `bool`/`HTMLElement` | `true` | Flag to enable autoplay. If `play` is a `HTMLElement`, it will replace the autoplay toggle button. |
-| **autoplay** | `object` | - | `play` settings |
-| autoplay.**direction** | `enum` | '>' | Autoplay direction. Allowed values: `<`, `>` |
-| autoplay.**mode** | `enum` | 'bounce' | Autoplay mode. Allowed values: `bounce`, `rewind`, `loop` (needs `loop` enabled) |
-| autoplay.**duration** | `integer` | 3800 | Duration for autoplay timeout |
-| autoplay.**pauseOnInteraction** | `bool` | `true` | Flag to pause autoplay on slider interaction (hover, click) |
 | **swipeToSlide** | `bool` | `true` | Flag to enable touch support |
 | **swipeThreshold** | `integer` | 60 | Distance the touch has to move before swipe is initiated |
 | **dragToSlide** | `bool` | `true` | Flag to enable mouse drag support |
@@ -546,19 +525,34 @@
 | **next** | `bool`/`HTMLElement` | `true` | Flag to enable next arrow. If `next` is a `HTMLElement`, it will replace the next button. |
 | **loop** | `bool` | `false` | Flag to enable carousel |
 | **rewind** | `bool` | `false` | Flag to rewind posts on edges |
-| **intersetction** | `object` | - | Settings for IntersectionObserver API |
-| intersection.**root** | `HTMLElement` | `this.$slider` | Element to calculate the intersection against. |
-| intersection.**rootMargin** | `string` | `-20px` | Adaptions to root element bounding box. |
-| intersection.**threshold** | `float` | 0 | Value between 0-1, will define the percentage of intersection needed to display/hide slide. 0 = 1px |
-| **l10n** | `object` | - | Language strings |
-| l10n.**prev** | `string` | 'Previous slide' | Title for prev button |
-| l10n.**next** | `string` | 'Next slide' | Title for next button |
-| l10n.**start** | `string` | 'Start autoplay' | Title for play button, if autoplay is not enabled |
-| l10n.**pause** | `string` | 'Pause autoplay' | Title for play button, if autoplay is enabled |
-| l10n.**goto** | `string` | 'Go to slide %d' | Title for dot button |
-| l10n.**active** | `string` | 'Go to slide %d' | Title for current slide shortcut |
-| l10n.**nav** | `string` | 'Go to slider pagination' | Title for pagination shortcut |
         -->
+        <div class="setting">
+          <h3><abbr title="localization">l10n</abbr></h3>
+          <p>
+            <strong>Type</strong>:<br>
+            <em><code>object</code></em>
+          </p>
+          <p>
+            <strong>Default values</strong>:<br>
+            <code>l10n.<strong>prev</strong></code>: <em><code>string</code></em> <code>'Previous slide'</code><br>
+            <code>l10n.<strong>next</strong></code>: <em><code>string</code></em> <code>'Next slide'</code><br>
+            <code>l10n.<strong>start</strong></code>: <em><code>string</code></em> <code>'Start autoplay'</code><br>
+            <code>l10n.<strong>pause</strong></code>: <em><code>string</code></em> <code>'Pause autoplay'</code><br>
+            <code>l10n.<strong>goto</strong></code>: <em><code>string</code></em> <code>'Go to slide %d'</code><br>
+            <code>l10n.<strong>active</strong></code>: <em><code>string</code></em> <code>'Go to current slide'</code><br>
+            <code>l10n.<strong>nav</strong></code>: <em><code>string</code></em> <code>'Go to slider pagination'</code><br>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            <code>l10n.<strong>prev</strong></code>: Title for prev button <br>
+            <code>l10n.<strong>next</strong></code>: Title for next button <br>
+            <code>l10n.<strong>start</strong></code>: Title for <code>play</code> button, if <code>autoplay.stop</code> is enabled<br>
+            <code>l10n.<strong>pause</strong></code>: Title for <code>play</code> button, if <code>autoplay.stop</code> is disabled<br>
+            <code>l10n.<strong>goto</strong></code>: Title for dot <code>%d</code><br>
+            <code>l10n.<strong>active</strong></code>: Title for current slide shortcut (not implemented)<br>
+            <code>l10n.<strong>nav</strong></code>: Title for pagination shortcut (not implemented)<br>
+          </p>
+        </div>
         <h2 class="block__title">Settings <span>for: <strong>sync.js</strong></span></h2>
         <div class="setting">
           <h3>syncedSliders</h3>
@@ -666,6 +660,36 @@
             <strong>Description</strong>:<br>
             Will be fired after sliding to the current slide. If <code>loop</code> is enabled <code>isEdgeSlide</code>
             indicates an edge jump.
+          </p>
+        </div>
+        <div class="event">
+          <h3>whiledrag</h3>
+          <p>
+            <strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>direction</code> - <code>'&lt;'</code> or <code>'&gt;'</code> indicates drag direction<br>
+            <code>distance</code> - <code>object</code> dragged distance in <abbr title="pixel">px</abbr><br>
+            <code>origin</code> - <code>object</code> original track position
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired during drag/swipe.
+          </p>
+        </div>
+        <div class="event">
+          <h3>whileslide</h3>
+          <p>
+            <strong>Arguments</strong>: <br>
+            <code>slider</code> - Instance of slider<br>
+            <code>direction</code> - <code>'&lt;'</code> or <code>'&gt;'</code> indicates slide direction<br>
+            <code>distance</code> - total distance to transform in <abbr title="pixel">px</abbr><br>
+            <code>distancePassed</code> - distance transformed in <abbr title="pixel">px</abbr><br>
+            <code>transition</code> - total transition time in <abbr title="miliseconds">ms</abbr><br>
+            <code>transitionPassed</code> - passed transition time in <abbr title="miliseconds">ms</abbr>
+          </p>
+          <p>
+            <strong>Description</strong>:<br>
+            Will be fired during sliding.
           </p>
         </div>
         <div class="event">
