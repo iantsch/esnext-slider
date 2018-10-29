@@ -1,7 +1,6 @@
 .idea/
 node_modules/
 .DS_Store
-dist/**/*.map
-dist/css/*.js
+dist/
 docs/**/*.map
 docs/**/style.js

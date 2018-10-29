@@ -1,3 +1,5 @@
 docs/
 !dist/
+dist/**/*.map
+dist/css/*.js
 .idea/
