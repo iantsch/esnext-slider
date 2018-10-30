@@ -9,3 +9,7 @@ Slim and modular ESnext javascript slider/carousel library ~ 8.0KB gzipped
 * [Events](https://iantsch.github.io/esnext-slider/#events)
 
 Please visit [iantsch.github.io/esnext-slider](https://iantsch.github.io/esnext-slider#tldr) for further information.
+
+## Contributor
+
+[@iantsch](https://twitter.com/iantsch) - [web developer](https://mbt.wien) behind this and other project.
