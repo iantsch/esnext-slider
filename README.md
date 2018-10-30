@@ -12,4 +12,4 @@ Please visit [iantsch.github.io/esnext-slider](https://iantsch.github.io/esnext-
 
 ## Contributor
 
-[@iantsch](https://twitter.com/iantsch) - [web developer](https://mbt.wien) behind this and other project.
+[@iantsch](https://twitter.com/iantsch) - [web developer](https://mbt.wien) behind this and other projects.
