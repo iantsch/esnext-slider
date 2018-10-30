@@ -1,6 +1,6 @@
 # esnext-slider
 
-Slim and modular ESnext javascript slider/carousel library ~ 7.9KB gzipped
+Slim and modular ESnext javascript slider/carousel library ~ 8.0KB gzipped
 
 * [Examples](https://iantsch.github.io/esnext-slider/#examples)
 * [Features](https://iantsch.github.io/esnext-slider/#features)
