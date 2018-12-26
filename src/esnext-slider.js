@@ -380,16 +380,17 @@ export default class Slider {
       this.__initPaginationItem('dots', 'ol', this.$pagination);
       this.$dots.classList.add(`${this.__element('dots')}`);
       let className = `${this.__element('dot')}--${this.settings.modifier.active}`;
+      let $lis = [...this.$dots.querySelectorAll(`.${this.__element('dot')}`)];
       [...this.$$slides].forEach(($slide, index) => {
-        let $li = document.createElement('li');
+        let $li = $lis[index] || document.createElement('li');
         $li.classList.add(this.__element('dot'));
         if (index === this.settings.initialSlide) {
           this.__setActiveDot($li);
         }
         this.$dots.appendChild($li);
-        let $button = document.createElement('button');
+        let $button = $li.querySelector(`.${this.__element('button')}`) || document.createElement('button');
         $button.classList.add(`${this.__element('button')}`, `${this.__element('button')}--${this.settings.modifier.dot}`);
-        $button.title = this.settings.l10n.goto.replace('%d', index + 1);
+        $button.title = $button.title || this.settings.l10n.goto.replace('%d', index + 1);
         $li.appendChild($button);
         $button.addEventListener('click', () => {
           this.__setActiveDot($li);
