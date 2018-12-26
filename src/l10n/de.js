@@ -1,5 +1,5 @@
 export default {
-    prev: 'Letzter Slide',
+    prev: 'Vorheriger Slide',
     next: 'Nächster Slide',
     start: 'Autoplay starten',
     pause: 'Autoplay pausieren',
