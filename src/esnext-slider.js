@@ -70,11 +70,10 @@ export default class Slider {
       loop: false,
       rewind: false,
       syncedSliders: [],
-      //TODO: Implement Breackpoint/Resize
       intersection: {
         root: this.$slider,
-        rootMargin: '-20px',
-        threshold: 0
+        rootMargin: '0px',
+        threshold: [0, 0.01]
       },
       l10n: {
         prev: 'Previous slide',
@@ -244,9 +243,13 @@ export default class Slider {
   onIntersection(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        this.__changeVisibility(entry.target);
+        if (entry.intersectionRatio >= 0.01) {
+          this.__changeVisibility(entry.target);
+        }
       } else {
-        this.__changeVisibility(entry.target, 'remove');
+        if (entry.intersectionRatio === 0.0) {
+          this.__changeVisibility(entry.target, 'remove');
+        }
       }
     });
   }
