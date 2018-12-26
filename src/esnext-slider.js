@@ -519,6 +519,7 @@ export default class Slider {
       previousSlide.classList.remove(activeClass);
     }
     $slide.classList.add(activeClass);
+    $slide.setAttribute('aria-hidden', false);
   }
 
   __slideEnd() {
@@ -610,7 +611,7 @@ export default class Slider {
     let visibilityClass = `${this.__element('slide')}--${this.settings.modifier.visible}`;
     if (element) {
       element.classList[method](visibilityClass);
-      element.setAttribute('aria-hidden', method === 'add' ? false : true);
+      element.setAttribute('aria-hidden', true);
       element.setAttribute('tabindex', method === 'add' ? 0 : -1);
     }
   }
