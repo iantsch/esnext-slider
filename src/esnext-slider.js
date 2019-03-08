@@ -655,9 +655,15 @@ export default class Slider {
         return;
       }
       this.__resetTrackSize();
-      this.$$slidesAndClones.forEach($slide => this.__resizeSlide($slide));
-      this.__setTrackSize(referenceSize);
-      this.__slide(0, false);
+      setTimeout(() => {
+        this.$$slidesAndClones.forEach($slide => this.__resizeSlide($slide));
+        setTimeout(() => {
+          this.__setTrackSize(referenceSize)
+          setTimeout(() => {
+            this.__slide(0, false);
+          }, 0);
+        }, 0);
+      },0);
     }
   }
 
