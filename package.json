@@ -1,6 +1,6 @@
 {
   "name": "esnext-slider",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Slim modular ESnext carousel/slider library",
   "main": "src/esnext-slider.js",
   "license": "MIT",
