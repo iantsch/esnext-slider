@@ -214,12 +214,12 @@ export default class Slider {
 
   __resetTrackSize() {
     this.trackSize = 0;
-    this.$track.style[this.__size()] = null;
+    this.$track.removeAttribute('style');
     this.$track.style.display = 'block';
   }
 
   __setTrackSize(referenceSize) {
-    this.$track.style.display = null;
+    this.$track.removeAttribute('style');
     this.$track.style[this.__size()] = `${this.trackSize}px`;
     this.referenceSize = referenceSize;
   }
