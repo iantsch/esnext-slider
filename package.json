@@ -1,6 +1,6 @@
 {
   "name": "esnext-slider",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Slim modular ESnext carousel/slider library",
   "main": "src/esnext-slider.js",
   "license": "MIT",
@@ -17,11 +17,11 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.1.1",
     "postcss-scss": "^1.0.4",
-    "resolve-url-loader": "^2.3.0",
+    "resolve-url-loader": "^2.3.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.19.0",
-    "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
     "intersection-observer": "^0.5.1"

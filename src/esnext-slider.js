@@ -100,7 +100,7 @@ export default class Slider {
     this.currentSlide = false;
     this.fps = {
       then: 0,
-      interval: 1000 / 24,
+      interval: 1000 / 60,
       tolerance: .1
     };
     this.slideAnimation = {
@@ -271,6 +271,8 @@ export default class Slider {
 
   __initDragToSlide() {
     if (this.settings.dragToSlide) {
+      let slideClass = `.${this.__element('slide')}`;
+      [... this.$slider.querySelectorAll(`${slideClass} a, ${slideClass} img`)].forEach(item => item.draggable = false);
       this.$slider.addEventListener('mousedown', this.onDragStart);
       this.$slider.addEventListener('mousemove', this.onDrag);
       this.$slider.addEventListener('mouseup', this.onDragEnd);
