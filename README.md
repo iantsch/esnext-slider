@@ -1,5 +1,7 @@
 # esnext-slider
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iantsch/esnext-slider.svg)](https://greenkeeper.io/)
+
 Slim and modular ESnext javascript slider/carousel library ~ 8.0KB gzipped
 
 * [Examples](https://iantsch.github.io/esnext-slider/#examples)
